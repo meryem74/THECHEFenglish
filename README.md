@@ -128,4 +128,6 @@ python app.py
 
 Open the app in your browser:
  http://127.0.0.1:5000/
-TheChef demonstrates the integration of backend logic, database handling, and frontend interaction while solving a practical problem: allowing people to sell homemade meals easily and safely.                                                                                                                                           buna çalışma şeklinide mi ekliycem
+
+ 
+TheChef demonstrates the integration of backend logic, database handling, and frontend interaction while solving a practical problem: allowing people to sell homemade meals easily and safely.                                                                                                                                          
