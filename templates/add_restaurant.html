@@ -1,0 +1,117 @@
+{% extends "layout.html" %}
+
+{% block title %}Add Restaurant{% endblock %}
+
+{% block content %}
+
+<
+<style>
+
+/* Buton kapsayıcı */
+.form-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;   /* Üst boşluğu küçülttük */
+    flex-wrap: wrap;     /* Küçük ekranlarda alt alta geçebilir */
+}
+
+/* Güncelle butonu */
+.btn-update {
+    background-color: #e73939 !important;
+    border-color: #eb4040 !important;
+    color: #fff !important;
+    width: 160px;       /* Daraltılmış */
+    padding: 6px 0;     /* Yüksekliği küçültüldü */
+    font-size: 1rem;
+    border-radius: 8px;
+    font-weight: 600;
+    margin: 0;          /* Alt boşluğu sıfır */
+    transition: 0.3s;
+}
+
+.btn-update:hover {
+    background-color: #a83227 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(192,57,43,0.4);
+}
+
+/* İptal butonu */
+.btn-cancel {
+    background-color: #6c757d !important;
+    border-color: #6c757d !important;
+    color: #fff !important;
+    width: 100px;
+    padding: 6px 0;     /* Yükseklik küçültüldü */
+    font-size: 0.95rem;
+    border-radius: 8px;
+    margin: 0;          /* Alt boşluk tamamen sıfır */
+    transition: 0.3s;
+}
+
+.btn-cancel:hover {
+    background-color: #5a6268 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+</style>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+               <h3 class="text-center" style="color:#d63a29;">Add New Restaurant</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('add_restaurant') }}" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Restaurant Name</label>
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" name="description" rows="3" required></textarea>
+                    </div>
+
+                    <!-- 🔹 Sadece Şehir ve Eyalet -->
+                    <div class="mb-3">
+                        <label for="city" class="form-label">City</label>
+                        <input type="text" class="form-control" id="city" name="city" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="state" class="form-label">State / Province</label>
+                        <input type="text" class="form-control" id="state" name="state" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Restaurant Image</label><br>
+                        <input type="file" id="image" name="image" accept="image/*" class="d-none">
+                        <button type="button" class="btn btn-outline-primary" id="customFileBtn">Choose File</button>
+                        <span id="fileName" class="ms-2">No file chosen</span>
+                        <div class="form-text mt-1">PNG, JPG, JPEG, GIF, or WEBP format (max 5MB)</div>
+                    </div>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn btn-update">Save</button>
+                        <a href="{{ url_for('index') }}" class="btn btn-secondary btn-cancel">Cancel</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+const fileInput = document.getElementById('image');
+const customBtn = document.getElementById('customFileBtn');
+const fileName = document.getElementById('fileName');
+
+customBtn.addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', () => {
+    fileName.textContent = fileInput.files.length ? fileInput.files[0].name : 'No file chosen';
+});
+</script>
+
+{% endblock %}

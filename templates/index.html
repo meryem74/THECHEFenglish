@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="text-center hero-section">
+    <h1><span class="highlight">From my kitchen</span> to your home</h1>
+    <p class="subtitle">"The chef you're looking for is here"</p>
+
+
+     <div style="max-width: 500px; margin: 0 auto;">
+        <div class="position-relative mt-4">
+        
+        <i class="bi bi-search position-absolute"
+           style="top: 50%; left: 12px; transform: translateY(-50%); color: #999; font-size: 1.1rem;"></i>
+
+        <input
+            type="text"
+            id="restaurantSearch"
+            class="form-control search-input mt-4"
+            placeholder="Search by name, city, or state...">
+    </div>
+</div>
+
+<hr class="my-5">
+
+<div class="row" id="restaurantList">
+    {% for restaurant in restaurants %}
+    <div class="col-md-4 mb-4 restaurant-card">
+        <div class="card h-100 shadow-sm">
+            {% if restaurant.image_path %}
+            <img src="{{ url_for('static', filename=restaurant.image_path) }}" class="card-img-top restaurant-image" alt="{{ restaurant.name }}">
+            {% else %}
+            <div class="restaurant-image bg-secondary d-flex align-items-center justify-content-center">
+                <i class="bi bi-building text-light" style="font-size: 3rem;"></i>
+            </div>
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title restaurant-name">{{ restaurant.name }}</h5>
+                <p class="card-text">
+                    {{ restaurant.description[:100] ~ ('...' if restaurant.description|length > 100 else '') }}
+                </p>
+                <p><i class="bi bi-geo-alt"></i> {{ restaurant.city }}, {{ restaurant.state }}</p>
+                <div class="text-center">
+                    <a href="{{ url_for('restaurant_detail', id=restaurant.id) }}" class="btn btn-premium btn-detail">View Restaurant</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="col-12">
+        <div class="alert alert-info">No restaurants have been added yet.</div>
+    </div>
+    {% endfor %}
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const searchInput = document.getElementById("restaurantSearch");
+    const restaurantCards = document.querySelectorAll(".restaurant-card");
+
+    searchInput.addEventListener("input", () => {
+        const query = searchInput.value.toLowerCase();
+        restaurantCards.forEach(card => {
+            const name = card.querySelector(".restaurant-name").textContent.toLowerCase();
+            const city = card.querySelector(".bi-geo-alt").parentElement.textContent.toLowerCase();
+            card.style.display = (name.includes(query) || city.includes(query)) ? "block" : "none";
+        });
+    });
+});
+</script>
+
+{% endblock %}

@@ -1,0 +1,230 @@
+/* ======================
+   GENEL STİLLER
+====================== */
+body {
+    background: #fdf9f9;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ======================
+   BUTONLAR
+====================== */
+.btn-detail {
+    font-size: 0.9rem;
+    padding: 6px 30px;
+    border-radius: 10px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-detail:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+}
+
+.btn-premium {
+    background: #e63946;
+    color: #fff !important;
+    border: none;
+    border-radius: 25px;
+    padding: 8px 20px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.btn-premium:hover {
+    background: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(183, 28, 28, 0.2);
+}
+
+/* ======================
+   LOGO & BAŞLIK
+====================== */
+.logo {
+    height: 70px;
+    width: auto;
+    max-width: 120px;
+    object-fit: contain;
+    transition: 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(15deg);
+}
+
+.brand-text {
+    font-family: 'Playfair Display', serif;
+    font-weight: 900;
+    font-size: 2.9rem;
+    letter-spacing: 2px;
+    color: #e63946;
+}
+
+.highlight {
+    color: #cc1010;
+}
+
+/* ======================
+   NAVBAR
+====================== */
+.premium-navbar {
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* ======================
+   HERO SECTION
+====================== */
+.hero-section {
+    background: linear-gradient(135deg, rgba(236, 166, 172, 0.1) 0%, rgba(244, 196, 196, 0.3) 100%);
+    padding: 80px 20px;
+    text-align: center;
+    border-radius: 20px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    color: #b80e0e;
+    margin-bottom: 20px;
+}
+
+.hero-title span {
+    color: #e63946;
+}
+
+.hero-subtitle,
+.slogan {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: #e63946;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    font-weight: 500;
+    display: inline-block;
+    position: relative;
+}
+
+.slogan::before,
+.slogan::after {
+    content: '"';
+    font-size: 1.8rem;
+    color: #e63946;
+    vertical-align: middle;
+    margin: 0 6px;
+}
+
+/* ======================
+   ARAMA KUTUSU
+====================== */
+.search-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box {
+    position: relative;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.search-input {
+    border-radius: 50px;
+    padding: 15px 25px 15px 50px;
+    border: 2px solid #e63946;
+    box-shadow: 0 4px 10px rgba(230, 57, 70, 0.15);
+    font-size: 1rem;
+}
+
+.search-input:focus {
+    box-shadow: 0 4px 15px rgba(230, 57, 70, 0.25);
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #e63946;
+    font-size: 1.2rem;
+}
+
+/* ======================
+   KARTLAR
+====================== */
+.premium-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.premium-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 20px rgba(230, 57, 70, 0.15);
+}
+
+.restaurant-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    color: #000;
+    font-weight: 600;
+}
+
+.card-text {
+    color: #555;
+}
+
+/* ======================
+   FOOTER
+====================== */
+.premium-footer {
+    background: #fff;
+    color: #444;
+    padding: 25px 0;
+    border-top: 1px solid #ffe6e6;
+    margin-top: auto;
+}
+
+/* ======================
+   RESPONSIVE
+====================== */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .logo {
+        height: 40px;
+        max-width: 100px;
+    }
+    
+    .brand-text {
+        font-size: 1.8rem;
+    }
+    
+    .btn-premium, .btn-detail {
+        padding: 6px 15px;
+        font-size: 0.9rem;
+        margin: 5px 0;
+    }
+
+
+
+
+
+
+}

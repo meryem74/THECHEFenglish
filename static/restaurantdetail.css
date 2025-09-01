@@ -1,0 +1,285 @@
+.restaurant-detail-page {
+    font-family: 'Poppins', sans-serif;
+    color: #2c2c2c;
+}
+
+
+
+/* Başlıklar */
+.restaurant-detail-page h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: #d22424;
+    margin-bottom: 0.8rem;
+}
+
+.restaurant-detail-page .lead {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 1rem;
+}
+
+.restaurant-detail-page p i {
+    color: #e74c3c;
+}
+
+/* Resimler */
+.restaurant-detail-page img {
+    border-radius: 15px;
+    object-fit: cover;
+    max-height: 280px;
+    width: 100%;
+    box-shadow: 0 6px 18px rgba(192, 57, 43, 0.25);
+}
+
+/* Menü başlığı */
+.restaurant-detail-page h2 {
+    font-size: 1.7rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid #ff6b81;
+    display: inline-block;
+    padding-bottom: 4px;
+    color: #c0392b;
+}
+
+/* Kartlar */
+.restaurant-detail-page .card {
+    border: none;
+    border-radius: 5px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(255, 107, 129, 0.15);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.restaurant-detail-page .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(255, 107, 129, 0.25);
+}
+
+/* Menü kartları */
+.restaurant-detail-page .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.restaurant-detail-page .menu-item {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.restaurant-detail-page .menu-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+.restaurant-detail-page .menu-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.restaurant-detail-page .menu-info {
+    padding: 15px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.restaurant-detail-page .menu-info h5 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #b30047;
+}
+
+.restaurant-detail-page .menu-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.restaurant-detail-page .menu-info .price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #0c0000;
+    margin-bottom: 10px;
+}
+
+.restaurant-detail-page .menu-info .btn {
+    background: linear-gradient(135deg, #e3233f, #e13232);
+    border: none;
+    border-radius: 16px;
+    padding: 7px 12px;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.restaurant-detail-page .menu-info .btn:hover {
+    background: linear-gradient(135deg, #a52618, #a81919);
+}
+
+/* Yorumlar */
+.restaurant-detail-page .card-body .rating i {
+    color: #ff4757;
+    margin-left: 1px;
+}
+
+.restaurant-detail-page .card-body small {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Form alanları */
+.restaurant-detail-page form textarea,
+.restaurant-detail-page form select {
+    border-radius: 8px;
+    padding: 6px;
+    border: 1px solid #f8c7cc;
+    background: #fff8f8;
+}
+
+.restaurant-detail-page form textarea {
+    resize: none;
+}
+
+/* Butonlar */
+.restaurant-detail-page .btn-primary {
+    border-radius: 16px;
+    background: linear-gradient(135deg, #d51737, #ea3535);
+    border: none;
+    font-weight: 500;
+    width: auto;
+    padding: 8px 12px;
+}
+
+.restaurant-detail-page .btn-primary:hover {
+    background: linear-gradient(135deg, #af1c1c, #a00e0e);
+}
+
+/* ===== RESTAURANT BUTON GRUBU ===== */
+/* Buton grubu (Düzenle / Sil / Menü Ekle) */
+.restaurant-detail-page .owner-btns .btn {
+    padding: 8px 12px;       /* Buton boyutu */
+    font-size: 0.85rem;      /* Yazı boyutu */
+    border-radius: 16px;     /* Köşeleri oval yapar */
+    width: auto;             /* İçeriğe göre genişlik */
+    display: inline-flex;    /* İçeriğe göre genişliği alır */
+    justify-content: center;
+    align-items: center;
+    line-height: 1.2;
+    text-align: center;
+}
+.restaurant-detail-page .owner-btns .btn-outline-primary {
+    display: inline-flex !important;   /* <a> için flex yap */
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px !important;   /* Oval köşe */
+    padding: 8x 12px !important;     /* Küçük boyut */
+    width: auto;                       /* İçeriğe göre genişlik */
+}
+
+
+.restaurant-detail-page .btn-group {
+    display: inline-flex;  /* full width olmasın */
+    align-items: center;
+    gap: 7px;
+    width: auto; /* Butonlar içeriğe göre hizalansın */
+    border-radius: 8px;
+}
+.restaurant-detail-page .menu-item .menu-item-btns {
+    display: inline-flex;
+    gap: 6px; /* Butonlar arası boşluk */
+}
+
+.restaurant-detail-page .menu-item .menu-item-btns .btn {
+    display: inline-flex;        /* <a> ve <button> için aynı davranış */
+    justify-content: center;     /* Yazıyı ortala */
+    align-items: center;         /* Yüksekliği ortala */
+    padding: 8px 12px;           /* İçeriğe göre boyut */
+    font-size: 0.85rem;          /* Yazı boyutu */
+    border-radius: 16px;         /* Oval köşeler */
+    width: auto;                 /* İçeriğe göre genişlik */
+    line-height: 1.2;
+    text-align: center;
+}
+
+
+
+/* Butonlar küçültüldü */
+.restaurant-detail-page .btn-outline-primary,
+.restaurant-detail-page .btn-outline-danger,
+.restaurant-detail-page .btn-outline-success {
+    border-radius: 8px;
+    font-weight: 500;
+    padding: 4px 10px; /* Daha kompakt */
+    font-size: 0.85rem; /* Küçük yazı */
+    color: #fff;
+    transition: all 0.3s ease;
+    width: auto; /* İçeriğe göre genişlik */
+  
+    
+}
+
+
+
+
+
+/* ======================
+   RESTAURANT DETAIL PAGE BUTTONS
+====================== */
+
+.restaurant-detail-page .btn-outline-primary {
+    border-color: #e73847;   /* premium kırmızı */
+    background-color: #e43240;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.restaurant-detail-page .btn-outline-primary:hover {
+    background-color: #b71c1c; /* koyu kırmızı hover */
+    border-color: #b71c1c;
+    box-shadow: 0 4px 8px rgba(183, 28, 28, 0.25);
+}
+
+
+/* Danger - daha açık kırmızı tonu */
+.restaurant-detail-page .btn-outline-danger {
+    border-color: #db3737;   /* açık kırmızı */
+    background-color: #e04040;
+    color: #fff;
+    transition: 0.3s;
+   
+}
+
+.restaurant-detail-page .btn-outline-danger:hover {
+    background-color: #c0392b; /* koyulaşmış kırmızı */
+    border-color: #c0392b;
+    box-shadow: 0 4px 8px rgba(192, 57, 43, 0.25);
+}
+
+
+/* Success - ton uyumlu pembe/kırmızı */
+.restaurant-detail-page .btn-outline-success {
+    border-color: #e03838;   /* pastel kırmızı/pembe */
+    background-color: #ea3a3a;
+    color: #fff;
+    transition: 0.3s;
+}
+
+.restaurant-detail-page .btn-outline-success:hover {
+    background-color: #b31c1c; /* güçlü kırmızı */
+    border-color: #b32222;
+    box-shadow: 0 4px 8px rgba(214, 48, 49, 0.25);
+}

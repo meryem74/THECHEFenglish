@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block title %}Payment{% endblock %}
+
+{% block content %}
+<div class="payment-page">
+    <div class="payment-form-container">
+        <h1>Credit Card Information</h1>
+        <p>Total: <strong>${{ "%.2f"|format(total) }}</strong></p>
+
+        <form method="POST">
+            <div class="mb-3">
+                <label>Cardholder Name</label>
+                <input type="text" name="card_name" class="form-control" placeholder="Name on the card" required>
+            </div>
+            <div class="mb-3">
+                <label>Card Number</label>
+                <input type="text" name="card_number" class="form-control" placeholder="1234 5678 9012 3456" required>
+            </div>
+            <div class="mb-3">
+                <label>Expiry Date</label>
+                <input type="text" name="expiry" class="form-control" placeholder="MM/YY" required>
+            </div>
+            <div class="mb-3">
+                <label>CVV</label>
+                <input type="text" name="cvv" class="form-control" placeholder="123" required>
+            </div>
+            <button type="submit" class="btn btn-success">Make Payment</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

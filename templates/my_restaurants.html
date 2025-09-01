@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+{% block title %}My Restaurants{% endblock %}
+
+{% block content %}
+<style>
+.btn-add-restaurant {
+    background-color: #d34030 !important;
+    border-color: #cd3c2c !important;
+    color: #fff !important;
+}
+
+.btn-add-restaurant:hover {
+    background-color: #a83227 !important;
+    border-color: #a83227 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(192, 57, 43, 0.4);
+}
+</style>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>My Restaurants</h1>
+    <a href="{{ url_for('add_restaurant') }}" class="btn btn-success btn-add-restaurant">
+        <i class="bi bi-plus-circle"></i> Add Restaurant
+    </a>
+</div>
+
+{% if restaurants %}
+    <div class="row">
+        {% for restaurant in restaurants %}
+        <div class="col-md-4">
+            <div class="card">
+                {% if restaurant.image %}
+                <img src="{{ url_for('static', filename='uploads/' ~ restaurant.image) }}" class="card-img-top restaurant-image" alt="{{ restaurant.name }}">
+                {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{ restaurant.name }}</h5>
+                    <p class="card-text">{{ restaurant.description }}</p>
+                    <a href="{{ url_for('restaurant_detail', id=restaurant.id) }}" class="btn btn-primary">View</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="alert alert-info">
+        You haven't added any restaurants yet.
+    </div>
+{% endif %}
+{% endblock %}
